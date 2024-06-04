@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles/pet-information.css">
+<div id="pet-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="pet-name"></h2>
+        <div class="pet-info">
+            <img id="pet-image" src="#" alt="Pet Image">
+            <p id="pet-description"></p>
+        </div>
+    </div>
+</div>
+<script src="scripts/pet-information.js"></script>
+<script src="scripts/images-names-button.js"></script>
+<html></html>
+
+// Function to display pet information when a pet image is clicked
+function displayPetInfo(petData) {
+    // Find the HTML elements where you want to display the pet information
+    const petNameElement = document.getElementById('pet-name');
+    const petDescriptionElement = document.getElementById('pet-description');
+    const petImageElement = document.getElementById('pet-image');
+
+    // Update the HTML elements with the pet information
+    petNameElement.textContent = petData.breeds[0].name;
+    petDescriptionElement.textContent = petData.breeds[0].description;
+    petImageElement.src = petData.url;
+
+    // Show a modal or other UI element to display the pet information
+    // For example:
+    // document.getElementById('pet-modal').style.display = 'block';
+}
